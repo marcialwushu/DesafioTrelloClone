@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,11 +11,12 @@ import { BoardComponent } from './board/board.component';
   declarations: [
     AppComponent,
     BoardComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NoopAnimationsModule
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
