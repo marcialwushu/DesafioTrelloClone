@@ -14,4 +14,9 @@ myEmitter.once("test", () => {
 
 
 myEmitter.emit('test');
+myEmitter.emit('test');
+
+setTimeout(() => {
+    console.log('this  happens async');
+}, 1000);
 
