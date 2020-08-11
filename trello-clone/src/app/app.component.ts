@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'trello-clone';
+
+  boards = [
+    { name: 'Board One' },
+    { name: 'Board Two' }
+  ]
 }

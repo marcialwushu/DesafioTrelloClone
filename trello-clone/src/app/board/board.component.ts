@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -7,6 +7,8 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit {
+
+  @Input() board;
 
   todo = [
     'Get to work',
@@ -37,6 +39,11 @@ export class BoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  boardClicked(){
+    console.log(`Hey, clicked `);
+
   }
 
 }

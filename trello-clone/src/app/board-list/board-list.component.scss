@@ -1,0 +1,10 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+app-board {
+  margin: 8px;
+  flex: 1;
+  min-height: 100px;
+}

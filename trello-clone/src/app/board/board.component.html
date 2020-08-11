@@ -1,4 +1,8 @@
-<div class="example-container">
+<mat-card (click)="boardClicked()" [style.background-color]="board.color">
+  <mat-card-title>{{board?.name}}</mat-card-title>
+</mat-card>
+
+<!-- <div class="example-container">
   <h2>To do</h2>
 
   <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]"
@@ -14,4 +18,4 @@
     class="example-list" (cdkDropListDropped)="drop($event)">
     <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
   </div>
-</div>
+</div> -->
