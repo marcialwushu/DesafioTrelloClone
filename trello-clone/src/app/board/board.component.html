@@ -1,19 +1,10 @@
-{{id}}
+<h2>Board number {{id}}</h2>
+<mat-card *ngFor="let list of board.lists">
+  <h3>{{list.title}}</h3>
+  <mat-list dragula="list-bag">
+    <mat-list-item *ngFor="let card of list.cards">
+      {{card.title}}
+    </mat-list-item>
+  </mat-list>
+</mat-card>
 
-<!-- <div class="example-container">
-  <h2>To do</h2>
-
-  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]"
-    class="example-list" (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-  </div>
-</div>
-
-<div class="example-container">
-  <h2>Done</h2>
-
-  <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
-    class="example-list" (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-  </div>
-</div> -->

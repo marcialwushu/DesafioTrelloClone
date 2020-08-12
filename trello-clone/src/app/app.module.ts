@@ -11,6 +11,7 @@ import { BoardListComponent } from './board-list/board-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { MaterialDesignModule } from './material-design/material-design.module';
+import { DragulaModule } from 'ng2-dragula';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MaterialDesignModule } from './material-design/material-design.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialDesignModule
+    MaterialDesignModule,
+    DragulaModule
 
   ],
   providers: [],
