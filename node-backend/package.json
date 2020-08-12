@@ -4,7 +4,7 @@
   "description": "Node testing",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "start": "nodemon --exec \"ts-node src/index.ts\" -e \"ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Cleilson Pereira",
