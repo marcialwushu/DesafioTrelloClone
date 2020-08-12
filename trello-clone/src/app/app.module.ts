@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';
 import { BoardListComponent } from './board-list/board-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BoardService } from './service/board.service';
 
 import { MaterialDesignModule } from './material-design/material-design.module';
 import { DragulaModule } from 'ng2-dragula';
@@ -28,7 +29,7 @@ import { DragulaModule } from 'ng2-dragula';
     DragulaModule
 
   ],
-  providers: [],
+  providers: [BoardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
