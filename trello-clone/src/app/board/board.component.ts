@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -8,7 +9,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class BoardComponent implements OnInit {
 
-  @Input() board;
+  id: number;
 
   todo = [
     'Get to work',
@@ -36,14 +37,13 @@ export class BoardComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this._activatedRoute.paramMap.subscribe((params) => {
+      this.id = +params.get('id');
+    });
   }
 
-  boardClicked(){
-    console.log(`Hey, clicked `);
-
-  }
 
 }

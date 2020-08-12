@@ -3,8 +3,12 @@
   flex-direction: row;
 }
 
-app-board {
+mat-card {
   margin: 8px;
   flex: 1;
   min-height: 100px;
+}
+
+mat-card-title {
+  color: white;
 }

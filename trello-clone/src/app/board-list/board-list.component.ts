@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-board-list',
@@ -8,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class BoardListComponent implements OnInit {
 
   boards = [
-    { name: 'Board One', color: '#2666fe' },
-    { name: 'Board Two', color: '#076f30' }
+    { name: 'Board One', color: '#2666fe', id: '123' },
+    { name: 'Board Two', color: '#076f30', id: '456' }
   ]
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
+  }
+
+  boardClicked(board){
+    this._router.navigate(['boards', board.id]);
   }
 
 }
