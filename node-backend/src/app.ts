@@ -7,6 +7,8 @@ import * as path from 'path';
 
 import v1Router from './routes/api.v1';
 
+import './config/db';
+
 const app = express();
 
 if(app.get('env') === 'development') {
