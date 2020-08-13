@@ -1,8 +1,10 @@
 import { Router } from 'express';
+import { createBoard, getBoardById, getBoards } from '../controllers/board.controller';
 
 const router = Router();
 
-router.get('/boards', (req, res) => {res.json({value: 'JSON test'})});
-router.get('/boards/:id', () => {});
+router.get('/boards', getBoards);
+router.get('/boards/:id', getBoardById);
+router.get('/boards', createBoard);
 
 export default router;
