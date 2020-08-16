@@ -20,4 +20,6 @@ boardSchema.statics.create = function (name: string, callback) {
     board.save(callback);
 };
 
-mongoose.model('Board', boardSchema);
+const board = mongoose.model('Boards', boardSchema);
+
+export default board;

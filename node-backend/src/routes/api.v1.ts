@@ -3,8 +3,8 @@ import { createBoard, getBoardById, getBoards } from '../controllers/board.contr
 
 const router = Router();
 
-router.get('/boards', getBoards);
-router.get('/boards/:id', getBoardById);
-router.get('/boards', createBoard);
+router.get("/boards", getBoards);
+router.get("/boards/:id", getBoardById);
+router.post("/boards", createBoard);
 
 export default router;

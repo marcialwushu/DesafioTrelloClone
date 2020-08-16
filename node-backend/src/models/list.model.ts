@@ -12,4 +12,4 @@ const listSchema = new Schema({
     },
 });
 
-mongoose.model('List', listSchema);
+mongoose.model('Lists', listSchema);

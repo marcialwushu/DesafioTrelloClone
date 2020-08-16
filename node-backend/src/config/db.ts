@@ -1,9 +1,13 @@
 import * as mongoose from 'mongoose';
+import '../models/board.model';
+import '../models/list.model';
 
-const databaseUrl = 'mongodb://localhost/tello';
+const databaseUrl = 'mongodb+srv://<username>:<password>@cluster0.ruaed.mongodb.net/<dbname>?retryWrites=true&w=majority';
 
 mongoose.connect(databaseUrl, {
-    useNewUrlParser: true, useUnifiedTopology: true 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useCreateIndex: true 
 }).then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(`Erro: ${err}`));
 
@@ -21,8 +25,7 @@ mongoose.connection.on('disconnected', () => {
     process.exit(1);
 });
 
-import '../models/board.model';
-import '../models/list.model';
+
 
 
 

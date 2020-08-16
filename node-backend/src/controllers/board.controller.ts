@@ -1,43 +1,28 @@
 import { Request, Response } from 'express';
 import * as mongoose from 'mongoose';
+import board from '../models/board.model';
 
-const board = mongoose.model('Board');
+//const board = mongoose.model('Boards');
 
 export function getBoards(req: Request, res: Response) {
-    board.find((err, data) => {
-        if (err) {
-            return res.send(err).status(500);
-        }
-        res.json(data);
-    });
+    let boards = board.find();
+
+    return res.status(200).json(boards);
 }
 
 export function getBoardById(req: Request, res: Response) {
-    if (!req.params.id) {
-        res.sendStatus(400);
-    }
+    
+    let boards = board.findById(req.params.id);
 
-    board.findById(req.params.id, (err, data) => {
-        if (err) {
-            return res.send(err).status(500);
-        }
-        if (!data) {
-            return res.sendStatus(404);
-        }
-
-        res.json(data);
-    });
+    return res.status(200).json(boards);
 }
 
 export function createBoard(req: Request, res: Response) {
-    if (!req.body || !req.body.name) {
-        res.sendStatus(400);
-    }
+    
+    let boards = board.create(req.body);
 
-    board.create(req.body.name, (err, data) => {
-        if (err) {
-            return res.send(err).status(500);
-        }
-        res.sendStatus(204);
-    });
+    return res.status(201).json(boards);
 }
+
+
+
