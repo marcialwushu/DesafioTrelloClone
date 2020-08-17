@@ -15,6 +15,7 @@ export class BoardComponent implements OnInit {
 
 
 
+  // tslint:disable-next-line: variable-name
   constructor(private _activatedRoute: ActivatedRoute, private _board: BoardService) { }
 
   ngOnInit() {

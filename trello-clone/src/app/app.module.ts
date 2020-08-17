@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
 // import { MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
@@ -13,6 +14,7 @@ import { BoardService } from './service/board.service';
 
 import { MaterialDesignModule } from './material-design/material-design.module';
 import { DragulaModule } from 'ng2-dragula';
+import { RestService } from './service/rest.service';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,13 @@ import { DragulaModule } from 'ng2-dragula';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MaterialDesignModule,
     DragulaModule
 
   ],
-  providers: [BoardService],
+  providers: [BoardService, RestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

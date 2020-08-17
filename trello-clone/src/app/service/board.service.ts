@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { RestService } from './rest.service';
 
 @Injectable()
 export class BoardService {
@@ -48,13 +49,16 @@ export class BoardService {
     }
   ];
 
-  constructor() { }
+  constructor( private rest: RestService) { }
 
-  getBoards(){
-    return this.boards.map((b) => ({ name: b.name, color: b.color, id: b.id }));
+  getBoards() {
+    return this.rest.executeGet('/boards');
+
+    // return this.boards.map((b) => ({ name: b.name, color: b.color, id: b.id }));
   }
 
-  getBoardDetails(id: string){
-    return this.boards.filter((b) => b.id === id)[0];
+  getBoardDetails(id: string) {
+    return this.rest.executeGet(`/boards/${id}`);
+    // return this.boards.filter((b) => b.id === id)[0];
   }
 }

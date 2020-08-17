@@ -9,15 +9,16 @@ import { BoardService } from '../service/board.service';
 })
 export class BoardListComponent implements OnInit {
 
-  boards;
+  boards: any;
 
+  // tslint:disable-next-line: variable-name
   constructor(private _router: Router, private _board: BoardService) { }
 
   ngOnInit() {
     this.boards = this._board.getBoards();
   }
 
-  boardClicked(board){
+  boardClicked(board: { id: any; }) {
     this._router.navigate(['boards', board.id]);
   }
 

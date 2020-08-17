@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 import '../models/board.model';
 import '../models/list.model';
 
-const databaseUrl = 'mongodb+srv://<username>:<password>@cluster0.ruaed.mongodb.net/<dbname>?retryWrites=true&w=majority';
+const databaseUrl = 'mongodb+srv://trello:D1xBwvy4817VbBSP@cluster0.ruaed.mongodb.net/trello?retryWrites=true&w=majority';
 
 mongoose.connect(databaseUrl, {
     useNewUrlParser: true, 
