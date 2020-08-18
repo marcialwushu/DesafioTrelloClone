@@ -52,13 +52,15 @@ export class BoardService {
   constructor( private rest: RestService) { }
 
   getBoards() {
-    return this.rest.executeGet('/boards');
+
+    return this.rest.executeGet('/api/v1/boards');
+
 
     // return this.boards.map((b) => ({ name: b.name, color: b.color, id: b.id }));
   }
 
   getBoardDetails(id: string) {
-    return this.rest.executeGet(`/boards/${id}`);
+    return this.rest.executeGet(`/api/v1/boards/${id}`);
     // return this.boards.filter((b) => b.id === id)[0];
   }
 }

@@ -1,8 +1,10 @@
 <h2><mat-icon>person</mat-icon> Trello Clone Board</h2>
+
 <div class="flex-row">
   <mat-card *ngFor="let board of boards" (click)="boardClicked(board)"
   [style.background-color]="board.color">
     <mat-card-title>{{board?.name}}</mat-card-title>
+
   </mat-card>
 </div>
 

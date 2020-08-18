@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { BoardService } from '../service/board.service';
 
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -22,7 +23,14 @@ export class BoardComponent implements OnInit {
     this._activatedRoute.paramMap.subscribe((params) => {
       this.id = params.get('id');
       this.board = this._board.getBoardDetails(this.id);
+      // this.loadBoardDetails(params);
+      console.log(params);
     });
+  }
+
+  loadBoardDetails(board) {
+    board = this._board.getBoardDetails(this.id);
+    return board;
   }
 
 

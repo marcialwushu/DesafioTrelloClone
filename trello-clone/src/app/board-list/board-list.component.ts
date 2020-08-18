@@ -16,6 +16,7 @@ export class BoardListComponent implements OnInit {
 
   ngOnInit() {
     this.boards = this._board.getBoards();
+    console.log(this.boards);
   }
 
   boardClicked(board: { id: any; }) {

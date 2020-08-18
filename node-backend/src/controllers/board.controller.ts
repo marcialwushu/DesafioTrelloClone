@@ -10,6 +10,7 @@ export function getBoards(req: Request, res: Response) {
             return res.send(err).status(500);
         }
         res.json(data);
+        //res.json([{name: 'test board', color: '#2666fe'}]);
     });
 }
 

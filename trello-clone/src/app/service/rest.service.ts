@@ -4,9 +4,10 @@ import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
 
 import { Observable } from 'rxjs';
+import { from } from 'rxjs';
 
-
-type extractDataType = JSON;
+// const data = from(fetch('/api/endpoint'));
+const serverURL = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root'
@@ -17,20 +18,22 @@ export class RestService {
   constructor(private http: HttpClient) { }
 
   executeGet(url: string) {
-    this.http.get(url)
-      .pipe(map(this.extractData));
-    // this.http.get(url)
-    //   .subscribe(data => {
-    //     this.data = data;
-    //   });
+    // this.http.get(serverURL + url)
+    //   .pipe(map(this.extractData));
+    // console.log(serverURL + url);
+    this.http.get(serverURL + url)
+      .subscribe(data => {
+        this.data = data;
+        console.log(data);
+      });
 
     // tslint:disable-next-line: no-unused-expression
     this.handleError;
 
   }
 
-  extractData(res: HttpResponse<extractDataType>) {
-    return res.ok;
+  extractData(res) {
+    return res.json();
   }
 
   handleError(error: any) {

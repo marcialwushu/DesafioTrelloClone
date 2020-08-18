@@ -2,6 +2,7 @@ import * as express from 'express';
 import * as cookieParser from 'cookie-parser';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
 
 import * as path from 'path';
 
@@ -18,6 +19,13 @@ if(app.get('env') === 'development') {
     });
 }
 
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", 'GET, PUT, POST, DELETE');
+    app.use(cors()); 
+    next();
+})
+app.use(cors()); 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
